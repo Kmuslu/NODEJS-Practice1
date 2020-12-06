@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Node</title>
 </head>
+
 <body>
     HELLO FROM MAIN EJS
+
+    <!--vanilla javascript ile yazacagiz -->
+    <!-- <% %> ifadesi js deki {} ile function yazdirmamizla ayni islevi goruyor. -->
+
+    <% if(name) { %>
+     <h1> Hello <%=name %> </h1>
+    <% } else { %>
+     <h1> HELLO STRANGER </h1>
+    <% } %>
+
+    <!-- <% %> simgesini her bir satirda ayri ayri yazacagiz.  -->
+    
+    <%=name%>
+    <p> kevser</p>
 </body>
+
 </html>

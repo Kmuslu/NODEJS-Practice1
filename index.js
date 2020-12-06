@@ -7,10 +7,13 @@ const path = require("path");
 
 const MainRouter = require("./routes/MainRouter");
 const UserRouter = require("./routes/UserRouter")
+// require() dedigimde import etmis oluyorum..
+// import Main Router from "./routes/MainRouter ile ayni.
 
-app.set("view engine", "ejs");
-app.set("new", path.join(__dirname, "views"));
+app.set("view engine", "ejs"); //==> render deyince klasorun bir ejs klasoru oldugunu belirttim.
+app.set("new", path.join(__dirname, "views")); // ==> hangi path uzerinden main dosyasina ulasacak onu set ettim.
 
+// routerlarin icinde router.get()  ile kullandigim icin burada app.use() deyip requestimi yapiyorum cunku routerlarin icinde post, head, send gibi baska requestleri de kullanmaMI sagliyor. 
 app.use("/", MainRouter);
 app.use("/user", UserRouter);
 
@@ -28,7 +31,7 @@ app.use("/user", UserRouter);
 
 
 // NODEMON KURUMU
-// yapilan degisiklikten sonra normalde tekrar kapatik acmak gerekiyor. ama nodemon kurunca kendisi degisikliklerden sonra otomatik calisiyor. npm install --save-dev
+// yapilan degisiklikten sonra normalde tekrar kapatip acmak gerekiyor. ama nodemon kurunca kendisi her degisiklikten sonra otomatik calisiyor. npm install --save-dev
 
 app.listen(5000, () => {
     console.log(`I'm listening on port ${port}`)
